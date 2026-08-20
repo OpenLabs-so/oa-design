@@ -1,6 +1,6 @@
 {
   "name": "getopen-design",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Install the Open Analytics design language into your project: token CSS, type-checked component recipes, and the oa-design agent skill.",
   "type": "module",
   "bin": {
@@ -32,5 +32,8 @@
     "url": "git+https://github.com/OpenLabs-so/oa-design.git",
     "directory": "cli"
   },
-  "homepage": "https://github.com/OpenLabs-so/oa-design"
+  "homepage": "https://github.com/OpenLabs-so/oa-design",
+  "dependencies": {
+    "@clack/prompts": "^1.7.0"
+  }
 }
