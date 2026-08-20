@@ -1,0 +1,23 @@
+{
+  "skill_name": "oa-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build me a single-page analytics dashboard for my newsletter tool (it's called Lettercast). I need a stats row (subscribers, opens, clicks, unsubscribes), a big chart area, and two small cards for top posts and top referrers. React + Tailwind, one file, mock data is fine.",
+      "expected_output": "A dashboard page that reads as OA: ink-derived neutrals, white squircle frames with grey insets, fixed-height mini cards with See all, tabular-nums, one accent, pixel-matched skeletons or at least no layout shift, no bold weights.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "our settings page looks like a bootstrap admin from 2014, can you redo it? it has tabs for general / api keys / team / danger zone. next.js app router + tailwind. also add a nice empty state for the team tab when there are no members yet",
+      "expected_output": "Settings with a tab rail + section panels, SectionHeading pattern (title + one grey sentence), pill buttons with press physics, an empty state written as an invitation (bold claim + plain sentence + one secondary action), destructive zone styled as text-level red, not a red card.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I'm launching a small uptime monitoring SaaS called Pingline next week. Make me a landing page: hero, how it works, pricing (3 tiers, monthly/yearly), FAQ. It should feel calm and expensive, not like a template. React + Tailwind.",
+      "expected_output": "A landing built as plates on a grey stage with generous vertical gaps, a header that morphs into a glass pill on scroll (700ms cubic-bezier), IntersectionObserver reveals staggered in 80ms beats with 14px travel, pricing with accent-border recommended tier and real yearly math, sentence-case concrete copy.",
+      "files": []
+    }
+  ]
+}
