@@ -1,7 +1,9 @@
-# Components
+# Components (prose guide)
 
-Recipes, not a library. Each one is described by its anatomy and its exact
-values so you can rebuild it in any stack.
+The component patterns in prose, cross-referenced and stack-agnostic. The
+numbered recipe files beside this one carry the same patterns with the full
+type-checked React source embedded; read this file for the reasoning and the
+values, read a recipe when you are building that component.
 
 ## The squircle surface
 

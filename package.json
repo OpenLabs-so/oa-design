@@ -1,0 +1,17 @@
+{
+  "name": "oa-design",
+  "private": true,
+  "version": "0.0.0",
+  "description": "The Open Analytics design language as an agent skill, component recipes, and a CLI.",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "sync": "node build/sync.mjs",
+    "sync:cli": "node build/sync.mjs --cli"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "motion": "^12.0.0",
+    "react": "^19.0.0",
+    "typescript": "^5.7.0"
+  }
+}

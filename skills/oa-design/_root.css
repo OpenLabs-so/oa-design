@@ -1,0 +1,173 @@
+/*
+ * oa-design root tokens.
+ * Drop this into your global stylesheet once; every recipe in this skill
+ * reads from these names. The system's one idea: neutrals are never picked,
+ * they are --ink mixed into transparency at stated percentages.
+ *
+ * Tailwind v4 users: mirror these under @theme inline as
+ * --color-<name>: var(--<name>) to get the matching utilities.
+ */
+
+:root {
+  --ink: #292929;
+
+  /* stage and surfaces */
+  --background: #f6f6f6; /* the grey stage between plates */
+  --card: #ffffff;
+  --popover: #ffffff;
+  --foreground: var(--ink);
+  --card-foreground: var(--ink);
+
+  /* ink-derived neutrals: the percentages ARE the system */
+  --border: color-mix(in srgb, var(--ink) 12%, transparent);
+  --input: color-mix(in srgb, var(--ink) 14%, transparent);
+  --accent: color-mix(in srgb, var(--ink) 5%, transparent); /* hover wash */
+  --accent-foreground: var(--ink);
+  --muted: color-mix(in srgb, var(--ink) 5%, transparent);
+  --muted-foreground: #6d6d6d;
+
+  /* the one accent, and its focus ring */
+  --primary: #305dde;
+  --primary-foreground: #ffffff;
+  --ring: #3ba6f1;
+
+  /* secondary controls: flat grey, no border */
+  --secondary: #e9e9e9;
+  --secondary-foreground: var(--ink);
+
+  /* semantic, as TEXT tints on light (Tailwind's 500/700 rows) */
+  --destructive: oklch(0.637 0.237 25.331); /* red-500 */
+  --destructive-foreground: oklch(0.505 0.213 27.518); /* red-700 */
+  --success: oklch(0.596 0.145 163.225); /* emerald-600 */
+  --success-foreground: oklch(0.508 0.118 165.612); /* emerald-700 */
+  --warning: oklch(0.769 0.188 70.08); /* amber-500 */
+  --warning-foreground: oklch(0.555 0.163 48.998); /* amber-700 */
+  --info: oklch(0.623 0.214 259.815); /* blue-500 */
+  --info-foreground: oklch(0.488 0.243 264.376); /* blue-700 */
+
+  /* charts: the primary line is the accent's chart cousin */
+  --chart-1: #296ff0;
+
+  /* radius: one base, multiplied; never a bespoke radius */
+  --radius: 0.625rem;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* elevation is binary: resting or floating */
+  --shadow-resting: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-floating: 0 1px 2px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark is the same recipe re-inked: hairline percentages rise 2 points,
+   semantic text moves from the 700 row to the 400 row. */
+.dark {
+  --ink: #ededed;
+  --background: #191919;
+  --card: #212121;
+  --popover: #242424;
+  --border: color-mix(in srgb, var(--ink) 14%, transparent);
+  --input: color-mix(in srgb, var(--ink) 16%, transparent);
+  --muted-foreground: #969696;
+  --secondary: #2e2e2e;
+  --primary: #296ff0; /* one notch brighter than light's #305dde */
+  --destructive-foreground: oklch(0.704 0.191 22.216); /* red-400 */
+  --success-foreground: oklch(0.765 0.177 163.223); /* emerald-400 */
+  --warning-foreground: oklch(0.828 0.189 84.429); /* amber-400 */
+  --info-foreground: oklch(0.707 0.165 254.624); /* blue-400 */
+}
+
+/* Base discipline. The body is WHITE, not the grey stage: the body shows
+   through overscroll bounce, and grey peeking past a white screen reads as a
+   different page. Screens that want the stage paint their own backdrop. */
+body {
+  background: #ffffff;
+  color: var(--foreground);
+  overflow-x: clip;
+}
+.dark body {
+  background: var(--background);
+}
+
+/* Skeleton bars pulse by background-position, started out of phase. */
+@keyframes oa-skeleton {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Data arrives by focus, not by pop: an ANIMATION (not a transition; the
+   content mounts already final, a transition has no previous value to run
+   from). blur(0) stays on the element permanently. */
+@keyframes oa-arrive {
+  from {
+    opacity: 0.4;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+.oa-arrive {
+  animation: oa-arrive 0.3s ease-out;
+  filter: blur(0);
+}
+
+/* Toast physics: success pulses, error shakes. Alternate the odd/even copies
+   so repeated toasts of the same kind still restart their animation. */
+@keyframes oa-toast-success-odd {
+  0% { scale: 1; }
+  30% { scale: 1.025; }
+  60% { scale: 0.99; }
+  100% { scale: 1; }
+}
+@keyframes oa-toast-success-even {
+  0% { scale: 1; }
+  30% { scale: 1.025; }
+  60% { scale: 0.99; }
+  100% { scale: 1; }
+}
+@keyframes oa-toast-error-odd {
+  0% { translate: 0 0; }
+  25% { translate: -3px 0; }
+  50% { translate: 3px 0; }
+  75% { translate: -3px 0; }
+  100% { translate: 0 0; }
+}
+@keyframes oa-toast-error-even {
+  0% { translate: 0 0; }
+  25% { translate: -3px 0; }
+  50% { translate: 3px 0; }
+  75% { translate: -3px 0; }
+  100% { translate: 0 0; }
+}
+
+/* Scroll reveal (marketing pages): 14px is the whole travel. */
+.reveal {
+  opacity: 0;
+  translate: 0 14px;
+  transition:
+    opacity 0.7s ease-out,
+    translate 0.7s ease-out;
+  transition-delay: var(--reveal-delay, 0s);
+}
+.reveal.is-inview {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    translate: 0 0;
+    transition: none;
+  }
+  .oa-arrive {
+    animation: none;
+  }
+}

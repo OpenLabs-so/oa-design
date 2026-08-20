@@ -6,10 +6,11 @@ in the product: hex codes, spring constants, radii, easings. Paste this file
 into your agent's context (or drop it in your repo as a rule file) and ask for
 screens "in the OA style".
 
-This is the compiled, one-file edition. The same content lives as a proper
-agent skill (SKILL.md plus per-topic references) in this repository; prefer
-that layout for Claude Code and other skill-aware agents, and prefer this file
-for pasting.
+This is the compiled, one-file edition, made for pasting. The same language
+also ships in this repository as a proper agent skill
+(`skills/oa-design/`: per-component recipes with the full type-checked source
+embedded) and as a CLI (`npx getopen-design add <component>`); prefer those
+for Claude Code and other skill-aware agents.
 
 The look in one sentence: **white surfaces with continuous-curvature corners,
 resting on a quiet grey stage, drawn in a single ink, moved by a single

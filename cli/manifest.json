@@ -1,0 +1,14 @@
+[
+  { "slug": "squircle-card", "recipe": "01-squircle-card.md", "name": "Squircle card" },
+  { "slug": "button", "recipe": "02-button.md", "name": "Button" },
+  { "slug": "dropdown", "recipe": "03-dropdown.md", "name": "Dropdown" },
+  { "slug": "tab-bar", "recipe": "04-tab-bar.md", "name": "Tab bar" },
+  { "slug": "modal", "recipe": "05-modal.md", "name": "Modal" },
+  { "slug": "multi-step-dialog", "recipe": "06-multi-step-dialog.md", "name": "Multi-step dialog" },
+  { "slug": "skeleton", "recipe": "07-skeleton.md", "name": "Skeleton" },
+  { "slug": "notice-strip", "recipe": "08-notice-strip.md", "name": "Notice strip" },
+  { "slug": "floating-pill", "recipe": "09-floating-pill.md", "name": "Floating pill" },
+  { "slug": "toast", "recipe": "10-toast.md", "name": "Toast" },
+  { "slug": "header-morph", "recipe": "11-header-morph.md", "name": "Header morph" },
+  { "slug": "reveal", "recipe": "12-reveal.md", "name": "Scroll reveal" }
+]

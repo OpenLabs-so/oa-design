@@ -1,0 +1,36 @@
+{
+  "name": "getopen-design",
+  "version": "0.1.0",
+  "description": "Install the Open Analytics design language into your project: token CSS, type-checked component recipes, and the oa-design agent skill.",
+  "type": "module",
+  "bin": {
+    "getopen-design": "bin/getopen-design.mjs"
+  },
+  "files": [
+    "bin",
+    "manifest.json",
+    "payload"
+  ],
+  "scripts": {
+    "prepublishOnly": "node ../build/sync.mjs --cli"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "design-system",
+    "tailwind",
+    "react",
+    "motion",
+    "agent-skill",
+    "analytics",
+    "ui"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenLabs-so/oa-design.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/OpenLabs-so/oa-design"
+}
