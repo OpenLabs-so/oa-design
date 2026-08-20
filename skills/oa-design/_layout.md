@@ -1,5 +1,14 @@
 # Layout
 
+## Which surface is which
+
+The grey stage (`--background`, #f6f6f6) is NOT the app page's background.
+App screens sit on a white body; the grey appears as card insets and as the
+full-height backdrop of standalone moments (login, onboarding, marketing
+plates). A dashboard or settings screen painted grey edge to edge reads as a
+different product; when in doubt, the page is white and the grey is inside
+the cards.
+
 ## Plates, and the gap between them
 
 The page is not divided by rules; it is composed of **plates**. Each section
